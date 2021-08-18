@@ -26,5 +26,5 @@ jobs:
         # List of tags
         tags: ghcr.io/guillaume-ro-fr/s3_website:latest
         # Cache with GitHub Actions
-        cache-from: type=gha
-        cache-to: type=gha,mode=max
+        # cache-from: type=gha
+        # cache-to: type=gha,mode=max
