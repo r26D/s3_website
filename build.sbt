@@ -16,7 +16,7 @@ scalacOptions += "-target:jvm-1.6"
 
 libraryDependencies += "org.yaml" % "snakeyaml" % "1.13"
 
-libraryDependencies += "org.jruby" % "jruby" % "9.2.7.0" % "provided"
+libraryDependencies += "org.jruby" % "jruby" % "9.2.19.0"
 
 libraryDependencies += "com.amazonaws" % "aws-java-sdk" % "1.11.172"
 
@@ -37,3 +37,8 @@ resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repos
 jarName in assembly := "s3_website.jar"
 
 test in assembly := {}
+
+mergeStrategy in assembly := {
+ case PathList("META-INF", xs @ _*) => MergeStrategy.discard
+ case x => MergeStrategy.first
+}
